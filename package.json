@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "build:dev": "tsc && vite build --watch",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run --passWithNoTests",
@@ -14,6 +15,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@fontsource-variable/baloo-2": "^5.0.17",
+    "@fontsource/baloo-2": "^5.0.17",
     "@fontsource/kameron": "^5.0.15",
     "@fontsource/maven-pro": "^5.0.15",
     "@reduxjs/toolkit": "^1.9.7",

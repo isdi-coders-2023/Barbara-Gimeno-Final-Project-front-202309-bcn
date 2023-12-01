@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "@fontsource/maven-pro";
 import "@fontsource/kameron";
+import "@fontsource/baloo-2";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import App from "./components/App/App";
