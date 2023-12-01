@@ -6,12 +6,13 @@ const mainTheme: DefaultTheme = {
   typography: {
     fontFamily: "'Maven Pro', sans-serif;",
     titleFont: "'Kameron', serif",
+    appName: "'Baloo 2 Variable', sans-serif",
   },
   colors: {
     darkColor: "#000",
     backgroundColor: "#FFF7EA",
     cardBackgroundColor: "#D0DFE6",
-    lightColor: "FFF",
+    lightColor: "#FFF",
     buttonColor: "#0D2657",
     errorColor: "#D65745",
     rightColor: "#55B938",
