@@ -7,15 +7,13 @@ const Navigation = (): React.ReactElement => {
       <li>
         <NavLink className="navigation__content" aria-label="home" to="/home">
           {({ isActive }) => (
-            <>
-              <span
-                className={
-                  isActive ? "navigation__text-active" : "navigation__text"
-                }
-              >
-                Home
-              </span>
-            </>
+            <span
+              className={
+                isActive ? "navigation__text-active" : "navigation__text"
+              }
+            >
+              Home
+            </span>
           )}
         </NavLink>
       </li>
@@ -26,15 +24,13 @@ const Navigation = (): React.ReactElement => {
           to="/add-pool"
         >
           {({ isActive }) => (
-            <>
-              <span
-                className={
-                  isActive ? "navigation__text-active" : "navigation__text"
-                }
-              >
-                Add
-              </span>
-            </>
+            <span
+              className={
+                isActive ? "navigation__text-active" : "navigation__text"
+              }
+            >
+              Add
+            </span>
           )}
         </NavLink>
       </li>
