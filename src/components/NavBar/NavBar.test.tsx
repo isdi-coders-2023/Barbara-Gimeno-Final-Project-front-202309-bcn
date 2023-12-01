@@ -16,5 +16,18 @@ describe("Given a NavBar component", () => {
 
       expect(NavLink).toHaveTextContent(expectedText);
     });
+
+    test("Then it should show the text `Add`", () => {
+      const expectedText = "Add";
+      const expectedAccesibelText = "add pool";
+
+      customRenderProvider(<Navigation />);
+
+      const AddNavLink = screen.getByRole("link", {
+        name: expectedAccesibelText,
+      });
+
+      expect(AddNavLink).toHaveTextContent(expectedText);
+    });
   });
 });
