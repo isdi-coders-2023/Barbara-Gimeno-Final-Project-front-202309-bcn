@@ -5,7 +5,7 @@ const Navigation = (): React.ReactElement => {
   return (
     <NavBarStyled className="navigation">
       <li>
-        <NavLink className="navigation__content" to="/home">
+        <NavLink className="navigation__content" aria-label="home" to="/home">
           {({ isActive }) => (
             <>
               <span
@@ -20,7 +20,11 @@ const Navigation = (): React.ReactElement => {
         </NavLink>
       </li>
       <li>
-        <NavLink className="navigation__content" to="/add-pool">
+        <NavLink
+          className="navigation__content"
+          aria-label="add pool"
+          to="/add-pool"
+        >
           {({ isActive }) => (
             <>
               <span
