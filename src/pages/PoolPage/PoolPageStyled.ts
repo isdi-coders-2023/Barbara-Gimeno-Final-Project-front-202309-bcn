@@ -1,13 +1,24 @@
 import styled from "styled-components";
 
 const PoolPageStyled = styled.main`
-  .page-title {
-    text-transform: uppercase;
-    font-weight: 800;
-    font-size: 1, 25rem;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .page {
+    font-family: ${({ theme }) => theme.typography.titleFont};
+
+    &__main-title {
+      font-weight: 800;
+      font-size: 1.5rem;
+      text-align: center;
+      text-transform: uppercase;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    &__subtitle {
+    }
   }
 `;
 export default PoolPageStyled;
