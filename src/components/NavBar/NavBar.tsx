@@ -20,8 +20,8 @@ const Navigation = (): React.ReactElement => {
       <li>
         <NavLink
           className="navigation__content"
-          aria-label="add pool"
-          to="/add-pool"
+          aria-label="create pool"
+          to="/create-pool"
         >
           {({ isActive }) => (
             <span
@@ -29,7 +29,7 @@ const Navigation = (): React.ReactElement => {
                 isActive ? "navigation__text-active" : "navigation__text"
               }
             >
-              Add
+              Create
             </span>
           )}
         </NavLink>
