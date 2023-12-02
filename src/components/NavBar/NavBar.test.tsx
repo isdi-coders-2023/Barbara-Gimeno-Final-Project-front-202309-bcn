@@ -17,9 +17,9 @@ describe("Given a NavBar component", () => {
       expect(NavLink).toHaveTextContent(expectedText);
     });
 
-    test("Then it should show the text `Add`", () => {
-      const expectedText = "Add";
-      const expectedAccesibelText = "add pool";
+    test("Then it should show the text `Create`", () => {
+      const expectedText = "Create";
+      const expectedAccesibelText = "create pool";
 
       customRenderProvider(<Navigation />);
 
