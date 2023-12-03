@@ -1,4 +1,5 @@
 import { useAppSelector } from "../../store/hooks";
+import PoolCard from "../PoolCard/PoolCard";
 import PoolListStyled from "./PoolsListStyled";
 
 const PoolsList = (): React.ReactElement => {
@@ -9,7 +10,9 @@ const PoolsList = (): React.ReactElement => {
   return (
     <PoolListStyled>
       {pools.map((pool) => (
-        <li key={pool._id}></li>
+        <li key={pool._id}>
+          <PoolCard pool={pool} />
+        </li>
       ))}
     </PoolListStyled>
   );
