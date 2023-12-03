@@ -12,6 +12,6 @@ export interface PoolDataStructure {
 export interface PoolStructure extends PoolDataStructure {
   _id: string;
 }
-export interface PoolStateStructure {
+export interface PoolsStateStructure {
   pools: PoolDataStructure[];
 }
