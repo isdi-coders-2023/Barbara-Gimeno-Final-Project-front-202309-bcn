@@ -21,7 +21,7 @@ export default defineConfig({
         "**/*.d.ts",
         "**/src/main.tsx",
         "**/src/styles/GlobalStyles.ts",
-        "**/src/mocks/poolsMocks.ts",
+        "**/src/store/index.ts",
       ],
     },
   },
