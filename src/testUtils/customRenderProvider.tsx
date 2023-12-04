@@ -1,14 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { poolsReducer } from "../store/features/pools/poolsSlice";
-import poolsMocks from "../mocks/poolsMocks";
+import { PropsWithChildren } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { render } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
+import { poolsReducer } from "../store/features/pools/poolsSlice";
+import poolsMocks from "../mocks/poolsMocks";
 import { mainTheme } from "../styles/mainTheme";
 import GlobalStyle from "../styles/GlobalStyle";
-import { render } from "@testing-library/react";
 
-const customRenderProvider = (childern: React.ReactElement) => {
+export const customRenderProvider = (childern: React.ReactElement) => {
   const mockStore = configureStore({
     reducer: {
       poolsState: poolsReducer,
@@ -28,4 +29,17 @@ const customRenderProvider = (childern: React.ReactElement) => {
   );
 };
 
-export default customRenderProvider;
+export const providerWrapper = ({ children }: PropsWithChildren) => {
+  const mockStore = configureStore({
+    reducer: {
+      poolsState: poolsReducer,
+    },
+    preloadedState: { poolsState: { pools: poolsMocks } },
+  });
+
+  return (
+    <BrowserRouter>
+      <Provider store={mockStore}>{children}</Provider>
+    </BrowserRouter>
+  );
+};
