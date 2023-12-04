@@ -25,7 +25,9 @@ const PoolCard = ({
         >
           {measuresLong} x {measuresHigh} x {measuresWide} m
         </span>
-        <span className="card__since">{since}</span>
+        <span className="card__since" title={`${since}`}>
+          {since}
+        </span>
       </div>
     </PoolCardStyled>
   );
