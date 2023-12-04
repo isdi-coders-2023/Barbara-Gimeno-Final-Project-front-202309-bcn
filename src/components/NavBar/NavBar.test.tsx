@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/react";
-import customRenderProvider from "../../testUtils/customRenderProvider";
+import { customRenderProvider } from "../../testUtils/customRenderProvider";
 import Navigation from "./NavBar";
 
 describe("Given a NavBar component", () => {
