@@ -10,6 +10,7 @@ const App = (): React.ReactElement => {
       <Routes>
         <Route path="/home" element={<PoolPage />} />
         <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/*" element={<Navigate to="/home" />} />
       </Routes>
       <Navigation />
     </>
