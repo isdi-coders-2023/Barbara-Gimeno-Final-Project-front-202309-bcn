@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import Header from "./Header";
 import { ThemeProvider } from "styled-components";
+import Header from "./Header";
 import { mainTheme } from "../../styles/mainTheme";
 import GlobalStyle from "../../styles/GlobalStyle";
 

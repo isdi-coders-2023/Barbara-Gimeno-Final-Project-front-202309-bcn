@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import poolsMocks from "../../mocks/poolsMocks";
 import { PoolStructure } from "../../store/features/pools/types";
-import customRenderProvider from "../../testUtils/customRenderProvider";
+import { customRenderProvider } from "../../testUtils/customRenderProvider";
 import PoolCard from "./PoolCard";
 
 describe("Given a PoolCard Component", () => {

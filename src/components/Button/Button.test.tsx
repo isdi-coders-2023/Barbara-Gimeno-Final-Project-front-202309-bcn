@@ -1,7 +1,7 @@
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Button from "./Button";
-import customRenderProvider from "../../testUtils/customRenderProvider";
+import { customRenderProvider } from "../../testUtils/customRenderProvider";
 
 beforeEach(() => {
   vi.resetAllMocks();

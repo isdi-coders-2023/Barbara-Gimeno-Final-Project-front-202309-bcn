@@ -1,5 +1,5 @@
 import { screen } from "@testing-library/react";
-import customRenderProvider from "../../testUtils/customRenderProvider";
+import { customRenderProvider } from "../../testUtils/customRenderProvider";
 import PoolsList from "./PoolsList";
 
 describe("Given a PoolList component", () => {
