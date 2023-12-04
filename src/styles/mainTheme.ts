@@ -7,6 +7,7 @@ const mainTheme: DefaultTheme = {
     fontFamily: "'Maven Pro', sans-serif;",
     titleFont: "'Kameron', serif",
     appName: "'Baloo 2 Variable', sans-serif",
+    buttonFontSize: "24px",
   },
   colors: {
     darkColor: "#000",

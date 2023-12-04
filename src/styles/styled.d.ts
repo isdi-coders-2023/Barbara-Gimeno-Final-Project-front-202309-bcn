@@ -8,6 +8,7 @@ declare module "styled-components" {
       fontFamily: string;
       titleFont: string;
       appName: string;
+      buttonFontSize: string;
     };
     colors: {
       darkColor: string;

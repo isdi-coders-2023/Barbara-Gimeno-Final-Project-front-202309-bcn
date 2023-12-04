@@ -10,7 +10,6 @@ const NavBarStyled = styled.ul`
   justify-content: space-around;
   min-height: 75px;
   background-color: ${({ theme }) => theme.colors.cardBackgroundColor};
-  background-blend-mode:;
   box-shadow: 0 0.01px 6px ${({ theme }) => theme.colors.darkColor};
   border-radius: ${({ theme }) => theme.borderRadius};
   align-items: center;
