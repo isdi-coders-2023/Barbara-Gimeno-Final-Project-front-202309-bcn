@@ -19,9 +19,12 @@ const PoolCard = ({
         height="203"
       />
       <div>
-        <span className="card__measures-long">{measuresLong}</span>
-        <span className="card__measures-high">{measuresHigh}</span>
-        <span className="card__measures-wide">{measuresWide}</span>
+        <span
+          className="card__measures"
+          title={`${measuresLong} x ${measuresHigh} x ${measuresWide} m`}
+        >
+          {measuresLong} x {measuresHigh} x {measuresWide} m
+        </span>
         <span className="card__since">{since}</span>
       </div>
     </PoolCardStyled>
