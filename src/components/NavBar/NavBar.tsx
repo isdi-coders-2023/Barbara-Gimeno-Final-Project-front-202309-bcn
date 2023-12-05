@@ -6,15 +6,7 @@ const Navigation = (): React.ReactElement => {
     <NavBarStyled className="navigation">
       <li>
         <NavLink className="navigation__content" aria-label="home" to="/home">
-          {({ isActive }) => (
-            <span
-              className={
-                isActive ? "navigation__text-active" : "navigation__text"
-              }
-            >
-              Home
-            </span>
-          )}
+          <span>Home</span>
         </NavLink>
       </li>
       <li>
@@ -23,15 +15,7 @@ const Navigation = (): React.ReactElement => {
           aria-label="create pool"
           to="/create-pool"
         >
-          {({ isActive }) => (
-            <span
-              className={
-                isActive ? "navigation__text-active" : "navigation__text"
-              }
-            >
-              Create
-            </span>
-          )}
+          <span>Create</span>
         </NavLink>
       </li>
     </NavBarStyled>
