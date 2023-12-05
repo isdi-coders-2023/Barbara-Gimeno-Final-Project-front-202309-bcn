@@ -27,17 +27,17 @@ const NavBarStyled = styled.ul`
       font-size: 24px;
       font-weight: 680;
     }
+  }
 
-    &__text-active {
-      color: ${({ theme }) => theme.colors.lightColor};
-      font-size: 30px;
-      font-weight: 800;
-      text-shadow:
-        -1.5px 0 black,
-        0 1.5px black,
-        1px 0 black,
-        0 -1px black;
-    }
+  .active {
+    color: ${({ theme }) => theme.colors.lightColor};
+    font-size: 30px;
+    font-weight: 800;
+    text-shadow:
+      -1.5px 0 black,
+      0 1.5px black,
+      1px 0 black,
+      0 -1px black;
   }
 `;
 
