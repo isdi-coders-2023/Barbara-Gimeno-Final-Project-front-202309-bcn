@@ -12,6 +12,7 @@ const App = (): React.ReactElement => {
         <Route path="/*" element={<Navigate to="/home" />} />
         <Route path="/home" element={<PoolPage />} />
       </Routes>
+
       <Navigation />
     </>
   );
