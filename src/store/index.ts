@@ -1,8 +1,9 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import { poolsReducer } from "./features/pools/poolsSlice";
+import { uiReducer } from "./features/ui/uiSlice";
 
 export const store = configureStore({
-  reducer: { poolsState: poolsReducer },
+  reducer: { poolsState: poolsReducer, uiState: uiReducer },
 });
 
 export type AppDispatch = typeof store.dispatch;
