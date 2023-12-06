@@ -1,9 +1,17 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+  :root {
+    --toastify-color-success:  ${({ theme }) => theme.colors.lightColor};
+    --toastify-color-error: ${({ theme }) => theme.colors.lightColor};
+  }
+  
   *, ::before, ::after {
     box-sizing: border-box;
   }
+
+
 
   body {
     margin: 0;
