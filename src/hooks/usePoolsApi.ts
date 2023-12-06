@@ -1,6 +1,7 @@
 import { useCallback } from "react";
 import axios from "axios";
 import { UsePoolsApiStructure } from "./types";
+import { toast } from "react-toastify";
 import {
   PoolStructure,
   PoolsStateStructure,
@@ -14,7 +15,9 @@ import {
 const usePoolsApi = (): UsePoolsApiStructure => {
   const dispatch = useAppDispatch();
 
-  const getPools = useCallback(async (): Promise<PoolsStateStructure> => {
+  const getPools = useCallback(async (): Promise<
+    PoolsStateStructure | undefined
+  > => {
     axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
     try {
@@ -27,7 +30,16 @@ const usePoolsApi = (): UsePoolsApiStructure => {
       return pools;
     } catch (error) {
       dispatch(hideLoadingActionCreator());
-      throw new Error((error as Error).message);
+      toast.error("Error loading pools", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   }, [dispatch]);
 

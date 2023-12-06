@@ -9,6 +9,7 @@ import poolsMocks from "../mocks/poolsMocks";
 import { mainTheme } from "../styles/mainTheme";
 import GlobalStyle from "../styles/GlobalStyle";
 import { uiReducer } from "../store/features/ui/uiSlice";
+import { ToastContainer } from "react-toastify";
 
 export const customRenderProvider = (children: React.ReactElement) => {
   const mockStore = configureStore({
@@ -16,11 +17,15 @@ export const customRenderProvider = (children: React.ReactElement) => {
       poolsState: poolsReducer,
       uiState: uiReducer,
     },
-    preloadedState: { poolsState: { pools: poolsMocks } },
+    preloadedState: {
+      poolsState: { pools: poolsMocks },
+      uiState: { isLoading: false },
+    },
   });
 
   render(
     <Provider store={mockStore}>
+      <ToastContainer />
       <BrowserRouter>
         <ThemeProvider theme={mainTheme}>
           <GlobalStyle />

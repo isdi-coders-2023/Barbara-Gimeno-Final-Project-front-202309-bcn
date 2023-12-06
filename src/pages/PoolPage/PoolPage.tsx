@@ -11,9 +11,10 @@ const PoolPage = (): React.ReactElement => {
 
   useEffect(() => {
     (async () => {
-      const { pools } = await getPools();
-
-      dispatch(loadPoolsActionCreator(pools));
+      const pools = await getPools();
+      if (pools) {
+        dispatch(loadPoolsActionCreator(pools.pools));
+      }
     })();
   }, [dispatch, getPools]);
 
