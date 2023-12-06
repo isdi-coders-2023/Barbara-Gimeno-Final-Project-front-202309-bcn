@@ -1,8 +1,9 @@
-import { screen } from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 import poolsMocks from "../../mocks/poolsMocks";
 import { PoolStructure } from "../../store/features/pools/types";
 import { customRenderProvider } from "../../testUtils/customRenderProvider";
 import PoolCard from "./PoolCard";
+import userEvent from "@testing-library/user-event";
 
 describe("Given a PoolCard Component", () => {
   describe("When it receives a pool 'beach pool'", () => {
@@ -43,6 +44,29 @@ describe("Given a PoolCard Component", () => {
       const altText = screen.getByAltText(expectedAltText);
 
       expect(altText).toBeInTheDocument();
+    });
+  });
+  describe("When it is rendered on screen and receives a pool with title beach pool and a click to delete it", () => {
+    const expectedButtonName = "Delete";
+
+    test("Then it should delete the beach pool", async () => {
+      const expectedMovieTitle = "beach pool";
+
+      customRenderProvider(<PoolCard pool={poolsMocks[0]} />);
+
+      const deleteButton = screen.getByRole("button", {
+        name: expectedButtonName,
+      });
+
+      const deleteTitle = screen.getByRole("heading", {
+        name: expectedMovieTitle,
+      });
+
+      await userEvent.click(deleteButton);
+
+      waitFor(() => {
+        expect(deleteTitle).not.toBeInTheDocument();
+      });
     });
   });
 });

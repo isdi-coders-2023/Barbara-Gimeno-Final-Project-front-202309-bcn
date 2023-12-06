@@ -25,7 +25,7 @@ describe("Given a usePoolsApi custom hook", () => {
     });
   });
   describe("When it uses it's method getPools to fetch from te API", () => {
-    test("Then it should return the available pools in the API", async () => {
+    test("Then it should a toast message with text 'Error laoding pools'", async () => {
       server.use(...errorHandlers);
 
       const expectedText = "Error loading pools";

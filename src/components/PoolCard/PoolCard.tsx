@@ -1,13 +1,21 @@
-import { PoolDataStructure } from "../../store/features/pools/types";
+import { deletePoolActionCreator } from "../../store/features/pools/poolsSlice";
+import { PoolStructure } from "../../store/features/pools/types";
+import { useAppDispatch } from "../../store/hooks";
+import Button from "../Button/Button";
 import PoolCardStyled from "./PoolCardStyled";
 
 interface PoolCardProps {
-  pool: PoolDataStructure;
+  pool: PoolStructure;
 }
 
 const PoolCard = ({
-  pool: { title, measuresLong, measuresHigh, measuresWide, since, image },
+  pool: { title, measuresLong, measuresHigh, measuresWide, since, image, _id },
 }: PoolCardProps): React.ReactElement => {
+  const dispatch = useAppDispatch();
+  const deletedPool = () => {
+    dispatch(deletePoolActionCreator(_id));
+  };
+
   return (
     <PoolCardStyled>
       <h3 className="card__title">{title}</h3>
@@ -28,6 +36,14 @@ const PoolCard = ({
         <span className="card__since" title={`${since}`}>
           {since}
         </span>
+        <div className="button">
+          <Button
+            type="button"
+            actionOnClick={deletedPool}
+            className="button__delete"
+            text="Delete"
+          />
+        </div>
       </div>
     </PoolCardStyled>
   );
