@@ -14,7 +14,7 @@ const poolsSlice = createSlice({
       action: PayloadAction<PoolStructure[]>,
     ): PoolsStateStructure => ({ ...currentState, pools: action.payload }),
 
-    delatePool: (
+    deletePool: (
       currentState: PoolsStateStructure,
       action: PayloadAction<string>,
     ): PoolsStateStructure => ({
@@ -26,7 +26,7 @@ const poolsSlice = createSlice({
 
 export const {
   loadPools: loadPoolsActionCreator,
-  delatePool: delatePoolActionCreator,
+  deletePool: deletePoolActionCreator,
 } = poolsSlice.actions;
 
 export const poolsReducer = poolsSlice.reducer;

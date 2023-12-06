@@ -1,4 +1,4 @@
-import { delatePoolActionCreator } from "../../store/features/pools/poolsSlice";
+import { deletePoolActionCreator } from "../../store/features/pools/poolsSlice";
 import { PoolStructure } from "../../store/features/pools/types";
 import { useAppDispatch } from "../../store/hooks";
 import Button from "../Button/Button";
@@ -13,7 +13,7 @@ const PoolCard = ({
 }: PoolCardProps): React.ReactElement => {
   const dispatch = useAppDispatch();
   const deletedPool = () => {
-    dispatch(delatePoolActionCreator(_id));
+    dispatch(deletePoolActionCreator(_id));
   };
 
   return (
