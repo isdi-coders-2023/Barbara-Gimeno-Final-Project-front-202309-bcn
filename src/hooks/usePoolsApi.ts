@@ -13,12 +13,11 @@ import {
 
 const usePoolsApi = () => {
   const dispatch = useAppDispatch();
+  axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
   const getPools = useCallback(async (): Promise<
     PoolsStateStructure | undefined
   > => {
-    axios.defaults.baseURL = import.meta.env.VITE_API_URL;
-
     try {
       dispatch(showLoadingActionCreator());
       const { data: pools } = await axios.get<{ pools: PoolStructure[] }>(
@@ -43,15 +42,13 @@ const usePoolsApi = () => {
   }, [dispatch]);
 
   const deletePool = useCallback(
-    async (id: string): Promise<Record<string, never> | undefined> => {
+    async (id: string): Promise<object | undefined> => {
       try {
         dispatch(showLoadingActionCreator());
 
-        const { data } = await axios.delete<Record<string, never>>(
-          `/pools/${id}`,
-        );
+        const { data } = await axios.delete<object>(`/pools/${id}`);
 
-        toast.success("Well done! Pool has been delated", {
+        toast.success("Well done! Pool has been deleted", {
           style: { backgroundColor: "#55B938", color: "#fff" },
         });
 
@@ -61,7 +58,7 @@ const usePoolsApi = () => {
       } catch {
         dispatch(hideLoadingActionCreator());
 
-        toast.error("Ups, you pool wasn't deleted", {
+        toast.error("Ups, your pool wasn't deleted", {
           style: { backgroundColor: "#D65745", color: "#000" },
         });
       }

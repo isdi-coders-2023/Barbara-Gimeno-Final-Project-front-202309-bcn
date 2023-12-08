@@ -24,19 +24,18 @@ describe("Given a usePoolsApi custom hook", () => {
       expect(pools).toStrictEqual(expectedPools);
     });
   });
-  describe("When it uses it's method getPools to fetch from te API", () => {
-    test("Then it should a toast message with text 'Error laoding pools'", async () => {
-      server.use(...errorHandlers);
 
-      const expectedText = "Error loading pools";
+  test("Then it should a toast message with text 'Error laoding pools'", async () => {
+    server.use(...errorHandlers);
 
-      customRenderProvider(<App />);
+    const expectedText = "Error loading pools";
 
-      const coso = await screen.findAllByText(expectedText);
-      await waitFor(() => {
-        coso.forEach((coso) => {
-          expect(coso).toBeInTheDocument();
-        });
+    customRenderProvider(<App />);
+
+    const getTest = await screen.findAllByText(expectedText);
+    await waitFor(() => {
+      getTest.forEach((getMethod) => {
+        expect(getMethod).toBeInTheDocument();
       });
     });
   });
