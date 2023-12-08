@@ -1,3 +1,4 @@
+import usePoolsApi from "../../hooks/usePoolsApi";
 import { deletePoolActionCreator } from "../../store/features/pools/poolsSlice";
 import { PoolStructure } from "../../store/features/pools/types";
 import { useAppDispatch } from "../../store/hooks";
@@ -12,7 +13,9 @@ const PoolCard = ({
   pool: { title, measuresLong, measuresHigh, measuresWide, since, image, _id },
 }: PoolCardProps): React.ReactElement => {
   const dispatch = useAppDispatch();
+  const { deletePool } = usePoolsApi();
   const deletedPool = () => {
+    deletePool(_id);
     dispatch(deletePoolActionCreator(_id));
   };
 
