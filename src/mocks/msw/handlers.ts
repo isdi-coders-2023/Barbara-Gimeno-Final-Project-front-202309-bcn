@@ -8,4 +8,8 @@ export const handlers = [
   http.get(`${apiUrl}/pools`, async () => {
     return HttpResponse.json({ pools: mock });
   }),
+
+  http.delete(`${apiUrl}/pools/6565cdaa1d9be1bc1e6af452`, () => {
+    return HttpResponse.json({});
+  }),
 ];

@@ -1,6 +1,5 @@
 import { useCallback } from "react";
 import axios from "axios";
-import { UsePoolsApiStructure } from "./types";
 import { toast } from "react-toastify";
 import {
   PoolStructure,
@@ -12,14 +11,13 @@ import {
   showLoadingActionCreator,
 } from "../store/features/ui/uiSlice";
 
-const usePoolsApi = (): UsePoolsApiStructure => {
+const usePoolsApi = () => {
   const dispatch = useAppDispatch();
+  axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
   const getPools = useCallback(async (): Promise<
     PoolsStateStructure | undefined
   > => {
-    axios.defaults.baseURL = import.meta.env.VITE_API_URL;
-
     try {
       dispatch(showLoadingActionCreator());
       const { data: pools } = await axios.get<{ pools: PoolStructure[] }>(
@@ -43,7 +41,32 @@ const usePoolsApi = (): UsePoolsApiStructure => {
     }
   }, [dispatch]);
 
-  return { getPools };
+  const deletePool = useCallback(
+    async (id: string): Promise<object | undefined> => {
+      try {
+        dispatch(showLoadingActionCreator());
+
+        const { data } = await axios.delete<object>(`/pools/${id}`);
+
+        toast.success("Well done! Pool has been deleted", {
+          style: { backgroundColor: "#55B938", color: "#fff" },
+        });
+
+        dispatch(hideLoadingActionCreator());
+
+        return data;
+      } catch {
+        dispatch(hideLoadingActionCreator());
+
+        toast.error("Ups, your pool wasn't deleted", {
+          style: { backgroundColor: "#D65745", color: "#000" },
+        });
+      }
+    },
+    [dispatch],
+  );
+
+  return { getPools, deletePool };
 };
 
 export default usePoolsApi;
