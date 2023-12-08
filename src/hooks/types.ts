@@ -1,5 +1,6 @@
-import { PoolsStateStructure } from "../store/features/pools/types";
+// import { PoolsStateStructure } from "../store/features/pools/types";
 
-export interface UsePoolsApiStructure {
-  getPools: () => Promise<PoolsStateStructure | undefined>;
-}
+// export interface UsePoolsApiStructure {
+//   getPools: () => Promise<PoolsStateStructure | undefined>;
+//   deletePool: () => Promise<void>;
+// }
