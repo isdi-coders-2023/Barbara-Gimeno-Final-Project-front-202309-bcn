@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: ${({ theme }) => theme.typography.fontFamily};
+    //font-family: ${({ theme }) => theme.typography.fontFamily};
     background-color: ${({ theme }) => theme.colors.backgroundColor};
   }
   
