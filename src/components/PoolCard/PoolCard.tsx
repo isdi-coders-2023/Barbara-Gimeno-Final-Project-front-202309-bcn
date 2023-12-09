@@ -21,7 +21,6 @@ const PoolCard = ({
 
   return (
     <PoolCardStyled>
-      <h3 className="card__title">{title}</h3>
       <img
         className="card__image"
         src={image}
@@ -29,12 +28,13 @@ const PoolCard = ({
         width="240"
         height="203"
       />
-      <div>
+      <div className="card__container">
+        <h3 className="card__title">{title}</h3>
         <span
           className="card__measures"
           title={`${measuresLong} x ${measuresHigh} x ${measuresWide} m`}
         >
-          {measuresLong} x {measuresHigh} x {measuresWide} m
+          Measures {measuresLong} x {measuresHigh} x {measuresWide} m
         </span>
         <span className="card__since" title={`${since}`}>
           {since}

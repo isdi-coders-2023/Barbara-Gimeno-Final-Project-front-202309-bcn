@@ -18,8 +18,8 @@ describe("Given a PoolCard Component", () => {
       expect(heading).toBeInTheDocument();
     });
 
-    test("Then it should show a '15 x 10 x 1 m' on a title ", () => {
-      const expectedSpan = "15 x 10 x 1 m";
+    test("Then it should show a 'Measures 15 x 10 x 1 m' on a title ", () => {
+      const expectedSpan = "Measures 15 x 10 x 1 m";
 
       customRenderProvider(<PoolCard pool={pool} />);
 

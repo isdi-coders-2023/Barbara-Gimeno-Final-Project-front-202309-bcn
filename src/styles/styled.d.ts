@@ -6,8 +6,6 @@ declare module "styled-components" {
     buttonBorderRatius: string;
     typography: {
       fontFamily: string;
-      titleFont: string;
-      appName: string;
       buttonFontSize: string;
     };
     colors: {
