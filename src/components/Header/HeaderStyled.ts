@@ -3,23 +3,29 @@ import styled from "styled-components";
 const HeaderStyled = styled.header`
   display: flex;
   justify-content: center;
-  min-height: 55px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
   border-radius: ${({ theme }) => theme.borderRadius};
 
   .header {
     &__background-image {
-      object-fit: contain;
-      height: 82px;
-      background-image: url("/image/waterpool.webp");
+      display: flex;
+      width: 100%;
+      height: 60px;
+      padding: 20px;
+      justify-content: flex-start;
+      background-size: cover;
+      background-position: bottom;
+      align-items: center;
+      background-image: url("/image/wave.webp");
     }
 
     &__title {
       font-family: ${({ theme }) => theme.typography.appName};
-      color: ${({ theme }) => theme.colors.lightColor};
+      color: ${({ theme }) => theme.colors.buttonColor};
       font-size: 30px;
       font-style: normal;
-      font-weight: 800;
+      font-weight: 700;
       line-height: normal;
     }
   }

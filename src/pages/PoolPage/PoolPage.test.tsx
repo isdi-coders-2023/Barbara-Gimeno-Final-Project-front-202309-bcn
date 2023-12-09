@@ -14,8 +14,8 @@ describe("Given a PoolPage component", () => {
       expect(text).toBeInTheDocument();
     });
 
-    test("Then it's should show a heading with the text 'Let your imagination run wild'", () => {
-      const expectedSubtitle = "Let your imagination run wild";
+    test("Then it's should show a heading with the text 'Let your imagination flow'", () => {
+      const expectedSubtitle = "Let your imagination flow";
 
       customRenderProvider(<PoolPage />);
 

@@ -6,7 +6,9 @@ import { ThemeProvider } from "styled-components";
 import { Provider } from "react-redux";
 import "@fontsource/maven-pro";
 import "@fontsource/kameron";
+import "@fontsource-variable/tilt-neon";
 import "@fontsource/baloo-2";
+
 import App from "./components/App/App";
 import GlobalStyle from "./styles/GlobalStyle";
 import { mainTheme } from "./styles/mainTheme";
