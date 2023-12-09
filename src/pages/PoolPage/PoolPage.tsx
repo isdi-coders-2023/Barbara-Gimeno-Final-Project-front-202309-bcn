@@ -22,7 +22,7 @@ const PoolPage = (): React.ReactElement => {
   return (
     <PoolPageStyled>
       <h2 className="page__main-title">Inspiration pools</h2>
-      <span className="page__subtitle">Let your imagination run wild</span>
+      <span className="page__subtitle">Let your imagination flow</span>
       <PoolsList />
     </PoolPageStyled>
   );

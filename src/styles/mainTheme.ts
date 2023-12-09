@@ -6,7 +6,7 @@ const mainTheme: DefaultTheme = {
   typography: {
     fontFamily: "'Maven Pro', sans-serif;",
     titleFont: "'Kameron', serif",
-    appName: "'Baloo 2 Variable', sans-serif",
+    appName: "'Tilt Neon Variable', sans-serif",
     buttonFontSize: "24px",
   },
   colors: {
