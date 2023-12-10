@@ -14,13 +14,12 @@ const App = (): React.ReactElement => {
       {uiState.isLoading && <Loading />}
       <ToastContainer />
       <Header />
+      <Navigation />
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/*" element={<Navigate to="/home" />} />
         <Route path="/home" element={<PoolPage />} />
       </Routes>
-
-      <Navigation />
     </>
   );
 };

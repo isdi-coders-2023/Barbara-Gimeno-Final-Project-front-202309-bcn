@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import "@fontsource/signika-negative";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -11,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    //font-family: ${({ theme }) => theme.typography.fontFamily};
     background-color: ${({ theme }) => theme.colors.backgroundColor};
+    font-family: ${({ theme }) => theme.typography.fontFamily};
   }
   
   h1,

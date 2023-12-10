@@ -22,7 +22,6 @@ const Loading = styled.span`
       font-weight: bold;
       line-height: 140%;
       color: ${({ theme }) => theme.colors.darkColor};
-      font-family: ${({ theme }) => theme.typography.titleFont};
     }
   }
 

@@ -21,7 +21,6 @@ const HeaderStyled = styled.header`
     }
 
     &__title {
-      font-family: ${({ theme }) => theme.typography.appName};
       color: ${({ theme }) => theme.colors.buttonColor};
       font-size: 30px;
       font-style: normal;

@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const ButtonStyles = styled.button`
   background: ${({ theme }) => theme.colors.buttonColor};
-  font-family: ${({ theme }) => theme.typography.fontFamily};
   color: ${({ theme }) => theme.colors.darkColor};
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: ${({ theme }) => theme.buttonBorderRatius};
