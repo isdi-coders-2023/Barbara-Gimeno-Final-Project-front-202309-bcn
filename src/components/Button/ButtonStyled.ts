@@ -1,14 +1,12 @@
 import styled from "styled-components";
 
 const ButtonStyles = styled.button`
-  background: ${({ theme }) => theme.colors.buttonColor};
-  color: ${({ theme }) => theme.colors.darkColor};
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: ${({ theme }) => theme.buttonBorderRatius};
-  font-size: ${({ theme }) => theme.typography.buttonFontSize};
+  background: #ffffff;
+  color: #000;
+  border-radius: 5px 0;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 100%; /* 20px */
   letter-spacing: -1px;
 
   .button {
