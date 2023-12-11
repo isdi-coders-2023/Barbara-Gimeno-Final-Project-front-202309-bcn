@@ -12,4 +12,8 @@ export const handlers = [
   http.delete(`${apiUrl}/pools/6565cdaa1d9be1bc1e6af452`, () => {
     return HttpResponse.json({});
   }),
+
+  http.post(`${apiUrl}/pools/create`, () => {
+    return HttpResponse.json({ pool: mock[0] });
+  }),
 ];
