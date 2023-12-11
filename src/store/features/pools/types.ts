@@ -15,5 +15,3 @@ export interface PoolStructure extends PoolDataStructure {
 export interface PoolsStateStructure {
   pools: PoolStructure[];
 }
-
-export type PoolWithoutId = Omit<PoolDataStructure, "_id">;

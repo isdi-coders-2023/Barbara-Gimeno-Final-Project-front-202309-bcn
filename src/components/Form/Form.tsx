@@ -130,7 +130,7 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
             type="url"
             className="pool-form__input"
             required
-            placeholder={"www.google.com/image/pool.jpg"}
+            placeholder={"http://www.google.com/image/pool.jpg"}
             onChange={onChangeForm}
             value={PoolData.image}
           />
