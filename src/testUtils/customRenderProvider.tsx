@@ -24,14 +24,14 @@ export const customRenderProvider = (children: React.ReactElement) => {
   });
 
   render(
-    <Provider store={mockStore}>
-      <ToastContainer />
-      <BrowserRouter>
+    <BrowserRouter>
+      <Provider store={mockStore}>
         <ThemeProvider theme={mainTheme}>
+          <ToastContainer />
           <GlobalStyle />
           {children}
         </ThemeProvider>
-      </BrowserRouter>
-    </Provider>,
+      </Provider>
+    </BrowserRouter>,
   );
 };

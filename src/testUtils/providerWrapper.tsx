@@ -8,7 +8,7 @@ import { uiReducer } from "../store/features/ui/uiSlice";
 import { ToastContainer } from "react-toastify";
 
 const providerWrapper = ({ children }: PropsWithChildren) => {
-  const mockStore = configureStore({
+  const store = configureStore({
     reducer: {
       poolsState: poolsReducer,
       uiState: uiReducer,
@@ -19,7 +19,7 @@ const providerWrapper = ({ children }: PropsWithChildren) => {
   return (
     <BrowserRouter>
       <ToastContainer />
-      <Provider store={mockStore}>{children}</Provider>
+      <Provider store={store}>{children}</Provider>
     </BrowserRouter>
   );
 };
