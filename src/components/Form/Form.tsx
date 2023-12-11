@@ -147,7 +147,7 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
           />
         </label>
       </div>
-      <Button className="pool-form__button" type={"submit"} text="Create" />
+      <Button className="pool-form__button" type="submit" text="Create" />
     </PoolFormStyled>
   );
 };
