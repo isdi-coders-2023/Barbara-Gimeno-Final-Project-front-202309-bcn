@@ -19,13 +19,13 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
     image: "",
   };
 
-  const [PoolData, setPoolData] = useState(initialPoolFormState);
+  const [poolData, setPoolData] = useState(initialPoolFormState);
 
   const onChangeForm = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setPoolData({
-      ...PoolData,
+      ...poolData,
       [event.target.id]: event.target.value,
     });
   };
@@ -33,7 +33,7 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
   const handleOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event?.preventDefault();
 
-    onSubmit(PoolData);
+    onSubmit(poolData);
   };
 
   return (
@@ -46,7 +46,7 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
       <div className="pool-form__wrapper">
         <label className="pool-form__control">
           {" "}
-          title
+          Pool type
           <input
             id="title"
             type="text"
@@ -54,7 +54,7 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
             required
             placeholder="Beach pool"
             onChange={onChangeForm}
-            value={PoolData.title}
+            value={poolData.title}
           />
         </label>
         <label className="pool-form__control">
@@ -67,7 +67,7 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
             required
             placeholder="Measures long"
             onChange={onChangeForm}
-            value={PoolData.measuresLong}
+            value={poolData.measuresLong}
           />
         </label>
         <label className="pool-form__control">
@@ -80,12 +80,12 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
             required
             placeholder="Measures high"
             onChange={onChangeForm}
-            value={PoolData.measuresHigh}
+            value={poolData.measuresHigh}
           />
         </label>
         <label className="pool-form__control">
           {" "}
-          Measure wide meters
+          Measures wide meters
           <input
             id="measuresWide"
             type="number"
@@ -93,7 +93,7 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
             required
             placeholder="measuresWide"
             onChange={onChangeForm}
-            value={PoolData.measuresWide}
+            value={poolData.measuresWide}
           />
         </label>
         <label className="pool-form__control">
@@ -106,7 +106,7 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
             required
             placeholder="yyyy"
             onChange={onChangeForm}
-            value={PoolData.since}
+            value={poolData.since}
           />
         </label>
         <label className="pool-form__control">
@@ -119,7 +119,18 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
             required
             placeholder="electrolisis salty"
             onChange={onChangeForm}
-            value={PoolData.depuration}
+            value={poolData.depuration}
+          />
+        </label>
+        <label className="pool-form__control">
+          {" "}
+          Material
+          <textarea
+            id="material"
+            className="pool-form__text-area"
+            placeholder="Material"
+            onChange={onChangeForm}
+            value={poolData.material}
           />
         </label>
         <label className="pool-form__control">
@@ -130,24 +141,13 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
             type="url"
             className="pool-form__input"
             required
-            placeholder={"http://www.google.com/image/pool.jpg"}
+            placeholder={"https://www.google.com/image/pool.jpg"}
             onChange={onChangeForm}
-            value={PoolData.image}
-          />
-        </label>
-        <label className="pool-form__control">
-          {" "}
-          material (optional)
-          <textarea
-            id="material"
-            className="pool-form__text-area"
-            placeholder="Material"
-            onChange={onChangeForm}
-            value={PoolData.material}
+            value={poolData.image}
           />
         </label>
       </div>
-      <Button className="pool-form__button" type={"submit"} text="Add" />
+      <Button className="pool-form__button" type={"submit"} text="Create" />
     </PoolFormStyled>
   );
 };
