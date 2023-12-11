@@ -21,12 +21,21 @@ const poolsSlice = createSlice({
       ...currentState,
       pools: currentState.pools.filter((pool) => pool._id !== action.payload),
     }),
+
+    addPool: (
+      currentState: PoolsStateStructure,
+      action: PayloadAction<PoolStructure>,
+    ): PoolsStateStructure => ({
+      ...currentState,
+      pools: [...currentState.pools, action.payload],
+    }),
   },
 });
 
 export const {
   loadPools: loadPoolsActionCreator,
   deletePool: deletePoolActionCreator,
+  addPool: addPoolActionCreator,
 } = poolsSlice.actions;
 
 export const poolsReducer = poolsSlice.reducer;

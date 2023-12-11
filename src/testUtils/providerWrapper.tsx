@@ -5,6 +5,7 @@ import poolsMocks from "../mocks/poolsMocks";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { uiReducer } from "../store/features/ui/uiSlice";
+import { ToastContainer } from "react-toastify";
 
 const providerWrapper = ({ children }: PropsWithChildren) => {
   const mockStore = configureStore({
@@ -17,6 +18,7 @@ const providerWrapper = ({ children }: PropsWithChildren) => {
 
   return (
     <BrowserRouter>
+      <ToastContainer />
       <Provider store={mockStore}>{children}</Provider>
     </BrowserRouter>
   );

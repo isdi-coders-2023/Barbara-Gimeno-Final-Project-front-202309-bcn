@@ -20,7 +20,7 @@ const App = (): React.ReactElement => {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/*" element={<Navigate to="/home" />} />
         <Route path="/home" element={<PoolPage />} />
-        <Route path="/create-pool" element={<CreatePoolPage />} />
+        <Route path="/pools-create" element={<CreatePoolPage />} />
       </Routes>
     </>
   );
