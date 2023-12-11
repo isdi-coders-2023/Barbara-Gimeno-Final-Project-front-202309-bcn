@@ -13,7 +13,7 @@ const Navigation = (): React.ReactElement => {
         <NavLink
           className="navigation__create"
           aria-label="create pool"
-          to="/create-pool"
+          to="/pools-create"
         >
           <span>Create</span>
         </NavLink>
