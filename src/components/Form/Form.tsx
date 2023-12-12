@@ -38,116 +38,124 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
 
   return (
     <PoolFormStyled
-      className="pool-form"
+      className="form"
       autoComplete="off"
       onSubmit={handleOnSubmit}
     >
-      {" "}
-      <div className="pool-form__wrapper">
-        <label className="pool-form__control">
-          {" "}
+      <div className="form__wrapper__title">
+        <label className="form__control" htmlFor="title">
           Pool type
-          <input
-            id="title"
-            type="text"
-            className="pool-form__input"
-            required
-            placeholder="Beach pool"
-            onChange={onChangeForm}
-            value={poolData.title}
-          />
         </label>
-        <label className="pool-form__control">
-          {" "}
-          Measures long meters
-          <input
-            id="measuresLong"
-            type="number"
-            className="pool-form__input"
-            required
-            placeholder="Measures long"
-            onChange={onChangeForm}
-            value={poolData.measuresLong}
-          />
-        </label>
-        <label className="pool-form__control">
-          {" "}
-          Measures high meters
-          <input
-            id="measuresHigh"
-            type="text"
-            className="pool-form__input"
-            required
-            placeholder="Measures high"
-            onChange={onChangeForm}
-            value={poolData.measuresHigh}
-          />
-        </label>
-        <label className="pool-form__control">
-          {" "}
-          Measures wide meters
-          <input
-            id="measuresWide"
-            type="number"
-            className="pool-form__input"
-            required
-            placeholder="measuresWide"
-            onChange={onChangeForm}
-            value={poolData.measuresWide}
-          />
-        </label>
-        <label className="pool-form__control">
-          {" "}
-          Since
-          <input
-            id="number"
-            type="text"
-            className="pool-form__input"
-            required
-            placeholder="yyyy"
-            onChange={onChangeForm}
-            value={poolData.since}
-          />
-        </label>
-        <label className="pool-form__control">
-          {" "}
-          Depuration
-          <input
-            id="depuration"
-            type="text"
-            className="pool-form__input"
-            required
-            placeholder="electrolisis salty"
-            onChange={onChangeForm}
-            value={poolData.depuration}
-          />
-        </label>
-        <label className="pool-form__control">
-          {" "}
-          Material
-          <textarea
-            id="material"
-            className="pool-form__text-area"
-            placeholder="Material"
-            onChange={onChangeForm}
-            value={poolData.material}
-          />
-        </label>
-        <label className="pool-form__control">
-          {" "}
-          Image (url)
-          <input
-            id="image"
-            type="url"
-            className="pool-form__input"
-            required
-            placeholder={"https://www.google.com/image/pool.jpg"}
-            onChange={onChangeForm}
-            value={poolData.image}
-          />
-        </label>
+        <input
+          id="title"
+          type="text"
+          className="form__input"
+          required
+          placeholder="Beach pool"
+          onChange={onChangeForm}
+          value={poolData.title}
+        />
       </div>
-      <Button className="pool-form__button" type="submit" text="Create" />
+      <div className="form__wrapper">
+        <label className="form__control" htmlFor="measuresLong">
+          Measures long meters
+        </label>
+        <input
+          id="measuresLong"
+          type="number"
+          className="form__input"
+          required
+          placeholder="Measures long"
+          onChange={onChangeForm}
+          value={poolData.measuresLong}
+        />
+      </div>
+
+      <div />
+      <div className="form__wrapper">
+        <label className="form__control" htmlFor="measuresHigh">
+          Measures high meters
+        </label>
+        <input
+          id="measuresHigh"
+          type="number"
+          className="form__input"
+          required
+          placeholder="Measures high"
+          onChange={onChangeForm}
+          value={poolData.measuresHigh}
+        />
+      </div>
+      <div className="form__wrapper">
+        <label className="form__control" htmlFor="measuresWide">
+          Measures wide meters
+        </label>
+        <input
+          id="measuresWide"
+          type="number"
+          className="form__input"
+          required
+          placeholder="measuresWide"
+          onChange={onChangeForm}
+          value={poolData.measuresWide}
+        />
+      </div>
+      <div className="form__wrapper">
+        <label className="form__name" htmlFor="since" aria-labelledby="since">
+          Since
+        </label>
+        <input
+          id="since"
+          type="number"
+          className="form__input"
+          required
+          placeholder="yyyy"
+          onChange={onChangeForm}
+          value={poolData.since}
+        />
+      </div>
+      <div className="form__wrapper">
+        <label className="form__control" htmlFor="depuration">
+          Depuration
+        </label>
+        <input
+          id="depuration"
+          type="text"
+          className="form__input"
+          required
+          placeholder="electrolisis salty"
+          onChange={onChangeForm}
+          value={poolData.depuration}
+        />
+      </div>
+      <div className="form__wrapper">
+        <label className="form__control" htmlFor="material">
+          Material
+        </label>
+        <textarea
+          id="material"
+          className="form__text-area"
+          placeholder="Material"
+          onChange={onChangeForm}
+          value={poolData.material}
+        />
+      </div>
+      <div className="form__wrapper__image">
+        <label className="form__control" htmlFor="image">
+          Image (url)
+        </label>
+        <input
+          id="image"
+          type="url"
+          className="form__input"
+          required
+          placeholder={"https://www.google.com/image/pool.jpg"}
+          onChange={onChangeForm}
+          value={poolData.image}
+        />
+      </div>
+
+      <Button type="submit" className="button__create" text="Create" />
     </PoolFormStyled>
   );
 };
