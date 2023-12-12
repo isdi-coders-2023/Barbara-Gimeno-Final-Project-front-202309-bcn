@@ -6,7 +6,7 @@ const PoolCardStyled = styled.article`
   flex-shrink: 0;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
+  border-radius: 20px 0px;
   color: ${({ theme }) => theme.colors.darkColor};
   background-color: ${({ theme }) => theme.colors.cardBackgroundColor};
   padding: 20px;
