@@ -39,7 +39,7 @@ const PoolCard = ({
         <span className="card__since" title={`${since}`}>
           {since}
         </span>
-        <div className="button">
+        <div className="button__delete">
           <Button
             type="button"
             actionOnClick={deletedPool}
