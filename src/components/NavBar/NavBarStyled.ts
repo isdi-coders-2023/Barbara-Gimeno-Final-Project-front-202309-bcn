@@ -8,6 +8,7 @@ const NavBarStyled = styled.ul`
   border-radius: 0px 0px 4px 4px;
   align-items: center;
   padding: 2px;
+  color: #404249;
 
   .navigation {
     &__home {
@@ -24,14 +25,13 @@ const NavBarStyled = styled.ul`
     }
 
     &__text {
-      color: ${({ theme }) => theme.colors.darkColor};
       font-size: 18px;
       font-weight: 680;
     }
   }
 
   .active {
-    color: ${({ theme }) => theme.colors.lightColor};
+    color: ${({ theme }) => theme.colors.darkColor};
     font-size: 22px;
     font-weight: 750;
   }
