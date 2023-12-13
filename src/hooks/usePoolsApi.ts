@@ -78,7 +78,7 @@ const usePoolsApi = () => {
         } = await axios.post<{ pool: PoolStructure }>("/pools/create", newpool);
 
         toast.success("Well done! You have created a new pool inspiration", {
-          style: { backgroundColor: "#D65745", color: "#000" },
+          style: { backgroundColor: "#55B938", color: "#000" },
         });
 
         dispatch(hideLoadingActionCreator());
