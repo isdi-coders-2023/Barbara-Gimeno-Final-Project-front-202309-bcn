@@ -1,16 +1,16 @@
 import { renderHook } from "@testing-library/react";
 import { server } from "../../mocks/msw/node";
 import poolsMocksWithoutId from "../../mocks/poolsMockWihtoutId";
-import poolsMocks from "../../mocks/poolsMocks";
 import usePoolsApi from "../usePoolsApi";
 import providerWrapper from "../../testUtils/providerWrapper";
 import { errorHandlers } from "../../mocks/msw/errorHandlers";
+import poolsMockId from "../../mocks/poolMockId";
 
 describe("Given a usePoolsApi custom hook", () => {
   describe("When it calls its method addPool with `beach pool` pools data", () => {
     test("Then it should return `beach pool` pools data", async () => {
       const expectedNewPool = poolsMocksWithoutId;
-      const expectedPool = poolsMocks[0];
+      const expectedPool = poolsMockId;
 
       const {
         result: {

@@ -63,7 +63,6 @@ const PoolFormStyled = styled.form`
       border-radius: 8px 0px;
       border-color: ${({ theme }) => theme.colors.lightColor};
       height: 100%;
-      width: 250px;
       padding: 10px;
       color: ${({ theme }) => theme.colors.darkColor};
       display: flex;
