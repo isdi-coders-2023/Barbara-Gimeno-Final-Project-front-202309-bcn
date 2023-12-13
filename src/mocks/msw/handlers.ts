@@ -14,6 +14,6 @@ export const handlers = [
   }),
 
   http.post(`${apiUrl}/pools/create`, () => {
-    return HttpResponse.json({ pool: mock[0] });
+    return HttpResponse.json(mock[0]);
   }),
 ];

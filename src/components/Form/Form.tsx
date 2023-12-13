@@ -101,7 +101,11 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
         />
       </div>
       <div className="form__wrapper">
-        <label className="form__name" htmlFor="since" aria-labelledby="since">
+        <label
+          className="form__control"
+          htmlFor="since"
+          aria-labelledby="since"
+        >
           Since
         </label>
         <input
