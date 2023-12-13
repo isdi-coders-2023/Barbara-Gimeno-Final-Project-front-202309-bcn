@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const PoolCardStyled = styled.article`
   width: 275px;
-  height: 380px;
   flex-shrink: 0;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -16,7 +15,7 @@ const PoolCardStyled = styled.article`
       display: flex;
       flex: 1 1 auto;
       flex-direction: column;
-      gap: 5px;
+      gap: 7px;
     }
     &__title {
       font-size: 20px;

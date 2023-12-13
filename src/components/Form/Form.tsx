@@ -157,9 +157,8 @@ const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
           onChange={onChangeForm}
           value={poolData.image}
         />
+        <Button type="submit" className="button__create" text="Create" />
       </div>
-
-      <Button type="submit" className="button__create" text="Create" />
     </PoolFormStyled>
   );
 };
