@@ -37,7 +37,7 @@ const PoolCard = ({
           Measures {measuresLong} x {measuresHigh} x {measuresWide} m
         </span>
         <span className="card__since" title={`${since}`}>
-          {since}
+          Since {since}
         </span>
         <div className="button__delete">
           <Button

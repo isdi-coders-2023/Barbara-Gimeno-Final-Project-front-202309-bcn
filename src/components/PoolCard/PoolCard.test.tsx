@@ -27,8 +27,8 @@ describe("Given a PoolCard Component", () => {
 
       expect(span).toBeInTheDocument();
     });
-    test("Then it should show a '2018' on a title", () => {
-      const expectedSpanTitle = pool.since;
+    test("Then it should show a 'Since 2018' on a title", () => {
+      const expectedSpanTitle = "Since 2018";
 
       customRenderProvider(<PoolCard pool={pool} />);
 
