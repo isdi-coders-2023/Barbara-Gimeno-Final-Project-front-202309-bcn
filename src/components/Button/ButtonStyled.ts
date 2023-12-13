@@ -1,18 +1,23 @@
 import styled from "styled-components";
 
 const ButtonStyles = styled.button`
-  background: #ffffff;
+  left: auto;
+  background-color: ${({ theme }) => theme.colors.lightColor};
+  border-radius: 10px 0;
+  display: flex;
+  flex-direction: column;
   color: #000;
-  border-radius: 5px 0;
-  font-size: 16px;
-  font-style: normal;
+  padding: 5px;
+  font-size: 18px;
   font-weight: 500;
-  letter-spacing: -1px;
+  margin-top: 10px;
+  align-items: center;
 
   .button {
     &__delete {
+      width: 60px;
       display: flex;
-      width: 103px;
+      width: 50px;
       height: 47px;
       padding: 8px 16px;
       justify-content: center;
