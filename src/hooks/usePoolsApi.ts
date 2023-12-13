@@ -51,7 +51,14 @@ const usePoolsApi = () => {
         const { data } = await axios.delete<object>(`/pools/${id}`);
 
         toast.success("Well done! Pool has been deleted", {
-          style: { backgroundColor: "#55B938", color: "#fff" },
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
         });
 
         dispatch(hideLoadingActionCreator());
@@ -73,17 +80,25 @@ const usePoolsApi = () => {
       dispatch(showLoadingActionCreator());
 
       try {
-        const {
-          data: { pool },
-        } = await axios.post<{ pool: PoolStructure }>("/pools/create", newpool);
+        const { data } = await axios.post<PoolStructure>(
+          "/pools/create",
+          newpool,
+        );
 
         toast.success("Well done! You have created a new pool inspiration", {
-          style: { backgroundColor: "#55B938", color: "#000" },
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
         });
 
         dispatch(hideLoadingActionCreator());
 
-        return pool;
+        return data;
       } catch {
         dispatch(hideLoadingActionCreator());
 
