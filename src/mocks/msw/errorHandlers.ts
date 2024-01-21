@@ -9,4 +9,7 @@ export const errorHandlers = [
   ),
 
   http.post(`${apiURL}/pools/create`, () => HttpResponse.error()),
+  http.patch(`${apiURL}/pools/6571d83d81f419ec2f6fc543`, () =>
+    HttpResponse.error(),
+  ),
 ];
