@@ -8,14 +8,6 @@ import { uiReducer } from "../store/features/ui/uiSlice";
 import { ToastContainer } from "react-toastify";
 
 const providerWrapper = ({ children }: PropsWithChildren) => {
-  const store = configureStore({
-    reducer: {
-      poolsState: poolsReducer,
-      uiState: uiReducer,
-    },
-    preloadedState: { poolsState: { pools: poolsMocks } },
-  });
-
   return (
     <BrowserRouter>
       <ToastContainer />
@@ -23,5 +15,16 @@ const providerWrapper = ({ children }: PropsWithChildren) => {
     </BrowserRouter>
   );
 };
+
+export const store = configureStore({
+  reducer: {
+    poolsState: poolsReducer,
+    uiState: uiReducer,
+  },
+  preloadedState: {
+    poolsState: { pools: poolsMocks },
+    uiState: { isLoading: false },
+  },
+});
 
 export default providerWrapper;
