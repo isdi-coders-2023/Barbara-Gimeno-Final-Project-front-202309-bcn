@@ -11,9 +11,11 @@ import {
   hideLoadingActionCreator,
   showLoadingActionCreator,
 } from "../store/features/ui/uiSlice";
+import { useNavigate } from "react-router-dom";
 
 const usePoolsApi = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   axios.defaults.baseURL = import.meta.env.VITE_API_URL;
 
@@ -27,9 +29,11 @@ const usePoolsApi = () => {
       );
 
       dispatch(hideLoadingActionCreator());
+
       return pools;
     } catch (error) {
       dispatch(hideLoadingActionCreator());
+
       toast.error("Error loading pools", {
         position: "top-right",
         autoClose: 5000,
@@ -77,9 +81,9 @@ const usePoolsApi = () => {
 
   const addPool = useCallback(
     async (newpool: PoolDataStructure): Promise<PoolStructure | undefined> => {
-      dispatch(showLoadingActionCreator());
-
       try {
+        dispatch(showLoadingActionCreator());
+
         const { data } = await axios.post<PoolStructure>(
           "/pools/create",
           newpool,
@@ -98,6 +102,10 @@ const usePoolsApi = () => {
 
         dispatch(hideLoadingActionCreator());
 
+        navigate("/pools");
+
+        scrollTo(0, 0);
+
         return data;
       } catch {
         dispatch(hideLoadingActionCreator());
@@ -107,10 +115,49 @@ const usePoolsApi = () => {
         });
       }
     },
-    [dispatch],
+    [dispatch, navigate],
   );
 
-  return { getPools, deletePool, addPool };
+  const modifyPool = useCallback(
+    async (id: string, modifiedPool: PoolDataStructure) => {
+      try {
+        dispatch(showLoadingActionCreator());
+        const {
+          data: { pool },
+        } = await axios.patch<{ pool: PoolStructure }>(
+          `/pools/${id}`,
+          modifiedPool,
+        );
+        dispatch(hideLoadingActionCreator());
+
+        toast.success("Well done. You have modify a pool inspiration", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+
+        navigate("/");
+
+        scrollTo(0, 0);
+
+        return pool;
+      } catch (error) {
+        dispatch(hideLoadingActionCreator());
+
+        toast.error("Error modifing pool, please try again", {
+          style: { backgroundColor: "#D65745", color: "#000" },
+        });
+      }
+    },
+    [dispatch, navigate],
+  );
+
+  return { getPools, deletePool, addPool, modifyPool };
 };
 
 export default usePoolsApi;
