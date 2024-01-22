@@ -14,12 +14,9 @@ const Button = ({
   actionOnClick,
 }: ButtonProps): React.ReactElement => {
   return (
-    <ButtonStyled
-      type={type}
-      onClick={actionOnClick}
-      className={className}
-      children={text}
-    />
+    <ButtonStyled type={type} onClick={actionOnClick} className={className}>
+      {text}
+    </ButtonStyled>
   );
 };
 

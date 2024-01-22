@@ -11,8 +11,8 @@ import providerWrapper from "../../testUtils/providerWrapper";
 import { customProvider } from "../../testUtils/customProvider";
 
 describe("Given a usePoolApi custom hook", () => {
-  describe("When it is called with its modifyPool method with 'beach pool", () => {
-    test.only("Then it should show the text 'Well done. You have modify a pool inspiration' as a feedback message", async () => {
+  describe("When it is called with its modifyPool method with `6571d83d81f419ec2f6fc543`", () => {
+    test("Then it should show the text 'Well done. You have modify a pool inspiration' as a feedback message", async () => {
       const expectedMessage = "Well done. You have modify a pool inspiration";
 
       customRenderMemory(<App />, ["pools/modify/6571d83d81f419ec2f6fc543"]);
@@ -24,7 +24,7 @@ describe("Given a usePoolApi custom hook", () => {
       } = renderHook(() => usePoolsApi(), { wrapper: customProvider });
 
       await modifyPool(poolsMocks[0]._id, poolsMockId);
-      const actualFeedback = await screen.findAllByText(expectedMessage);
+      const actualFeedback = await screen.getByText(expectedMessage);
 
       await waitFor(() => {
         expect(actualFeedback).toBeInTheDocument();

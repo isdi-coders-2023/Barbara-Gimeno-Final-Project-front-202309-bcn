@@ -1,10 +1,14 @@
 import { useState } from "react";
 import Button from "../Button/Button";
-import { PoolDataStructure } from "../../store/features/pools/types";
+import {
+  PoolDataStructure,
+  PoolStructure,
+} from "../../store/features/pools/types";
 import PoolFormStyled from "./PoolFormStyled";
 
 interface PoolFormProps {
   onSubmit: (poolData: PoolDataStructure) => void;
+  selectedPool?: PoolStructure;
 }
 
 const PoolForm = ({ onSubmit }: PoolFormProps): React.ReactElement => {
