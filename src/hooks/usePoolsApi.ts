@@ -22,8 +22,8 @@ const usePoolsApi = () => {
   const getPools = useCallback(async (): Promise<
     PoolsStateStructure | undefined
   > => {
+    dispatch(showLoadingActionCreator());
     try {
-      dispatch(showLoadingActionCreator());
       const { data: pools } = await axios.get<{ pools: PoolStructure[] }>(
         `/pools`,
       );
@@ -118,10 +118,34 @@ const usePoolsApi = () => {
     [dispatch, navigate],
   );
 
+  const loadSelectedPool = useCallback(
+    async (_id: string): Promise<PoolStructure | void> => {
+      try {
+        dispatch(showLoadingActionCreator());
+
+        const {
+          data: { pool },
+        } = await axios.get<{ pool: PoolStructure }>(`/pools/${_id}`);
+
+        scrollTo(0, 0);
+
+        dispatch(hideLoadingActionCreator());
+
+        return pool;
+      } catch (error) {
+        dispatch(hideLoadingActionCreator());
+
+        throw new Error((error as Error).message);
+      }
+    },
+    [dispatch],
+  );
+
   const modifyPool = useCallback(
     async (id: string, modifiedPool: PoolDataStructure) => {
       try {
         dispatch(showLoadingActionCreator());
+
         const {
           data: { pool },
         } = await axios.patch<{ pool: PoolStructure }>(
@@ -157,7 +181,7 @@ const usePoolsApi = () => {
     [dispatch, navigate],
   );
 
-  return { getPools, deletePool, addPool, modifyPool };
+  return { getPools, deletePool, addPool, loadSelectedPool, modifyPool };
 };
 
 export default usePoolsApi;
