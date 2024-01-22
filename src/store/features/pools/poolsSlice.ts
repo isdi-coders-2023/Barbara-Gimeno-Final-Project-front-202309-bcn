@@ -3,6 +3,7 @@ import { PoolsStateStructure, PoolStructure } from "./types";
 
 const initialPoolsState: PoolsStateStructure = {
   pools: [],
+  selectedPool: {} as PoolStructure,
 };
 
 const poolsSlice = createSlice({
@@ -30,6 +31,14 @@ const poolsSlice = createSlice({
       pools: [...currentState.pools, action.payload],
     }),
 
+    loadSelectedPool: (
+      currentState: PoolsStateStructure,
+      action: PayloadAction<PoolStructure>,
+    ): PoolsStateStructure => ({
+      ...currentState,
+      selectedPool: action.payload,
+    }),
+
     modifyPool: (
       currentState: PoolsStateStructure,
       action: PayloadAction<PoolStructure>,
@@ -46,6 +55,7 @@ export const {
   loadPools: loadPoolsActionCreator,
   deletePool: deletePoolActionCreator,
   addPool: addPoolActionCreator,
+  loadSelectedPool: loadSelectedPoolActionCreator,
   modifyPool: modifyPoolActionCreator,
 } = poolsSlice.actions;
 
