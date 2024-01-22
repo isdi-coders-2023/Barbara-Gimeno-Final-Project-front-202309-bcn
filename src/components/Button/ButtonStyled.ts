@@ -14,7 +14,7 @@ const ButtonStyles = styled.button`
   align-items: center;
 
   .button {
-    &__delete {
+    &__text {
       width: 60px;
       display: flex;
       width: 50px;
